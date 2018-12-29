@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String</title>
+</head>
+<body>
+	<div id="heading">
+		
+
+	</div>
+	<div id="product-list"></div>
+
+	<script type="text/javascript">
+		var string = "123445";
+		// nối chuỗi, ép kiểu toString, tìm kiếm kí tự trong chuỗi trả về vị trí, cắt chuỗi truyền vào vị trí đầu và cuối
+// dấu chấm thể hiện là phương thức
+		var myString = 'học javascript 04';
+		console.log(myString.indexOf('javascript'))	;
+		console.log(myString.slice(4,14));
+		console.log(myString.substring(4,14));
+//
+	var myArray = ['html', 'css', 'javascript', 'php'];
+	// lenght, join, push, pop, indexOf, unshift, 
+	console.log(myArray.length);
+	console.log(myArray.join(','));
+	console.log(myArray.push('docker', 'abc'));
+	document.write('<h1>'+myArray.join(' ')+'</h1>');
+
+	var string = 'php, javascript, html, css, react';
+
+	var my_string = string.split(',');
+	var heading_tag = document.getElementById('heading');
+
+
+	var html = '<select>';
+	for (var i = 0; i < my_string.length; i++) {
+		var lession_name = my_string[i];
+
+		html += '<option>' +lession_name+'</option>'
+	}
+	html += '</select>';
+
+	heading_tag.innerHTML = html;
+
+
+	var myProfile = {
+		name: 'Nguyễn Văn Đức',
+		age: '27',
+		address: 'japan'
+	}
+	console.log(myProfile['name']);
+	console.log(myProfile.age);
+
+	var products = [
+		{
+			name: 'bàn phím',
+			price: '10$'
+		},
+		{
+			name: 'chuột',
+			price: '2$'
+		},
+		{
+			name: 'màn hình',
+			price: '54$'
+		}
+
+	]
+
+	var html = '<ul>';
+	for (var i = 0; i < products.length; i++) {
+		var product = products[i];
+
+		html += '<li>';
+		html += '<h4>' +product.name+'</h4>';
+		html += '<p>' +product.price+'</p>';
+		html += '</li>';
+	}
+
+	html += '</ul>';
+
+	var productElement = document.getElementById('product-list');
+	productElement.innerHTML = html;
+
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array</title>
+</head>
+<body>
+	<div>
+		<input type="text" placeholder="enter Name" id="name">
+		<input type="text" placeholder="enter age" id="age">
+		<input type="text" placeholder="enter address" id="address">
+		<input type="button" id="submit" value="create">
+
+	</div>
+	<style type="text/css">
+		#student-data li{
+			border: 1px solid #ccc;
+			padding:8px;
+			height: 140px;
+			border-radius: 5px;
+			list-style: none;
+			float: left;
+			margin-left: 8px; 
+		}
+
+	</style>
+	<ul id="student-data"></ul>
+	<script>
+
+	var studentElement = document.getElementById('student-data');	
+	var students = [
+		
+	];
+
+	function renderView(){
+		var html = ' ';
+		for (let i = 0; i < students.length; i++) {
+			let student = students[i];
+			html += '<li>';
+				html += '<h5>' + (i+1) + '</h5>';
+				html += '<h5>' + student.name + '</h5>';
+				html += '<p>' + student.age + '</p>';
+				html += '<p>' + student.address + '</p>';
+				html += '<button onclick ="deleteStudent('+ i +')"> Delete </button> ';
+			html += '</li>';
+		}
+		studentElement.innerHTML = html;
+		// chu y += để nối chuỗi
+	}
+
+	function deleteStudent(studentIndex){
+		students.splice(studentIndex, 1);
+		renderView();
+	}
+	
+
+		document.addEventListener('DOMContentLoaded', function(){
+
+			var button = document.getElementById('submit');
+			// onclick to create button
+			button.addEventListener('click', function(){
+				var studentName = document.getElementById('name').value;
+				var studentAge = document.getElementById('age').value;
+				var studentAddress = document.getElementById('address').value;
+
+				var studentObjects = {
+					name: studentName,
+					age: studentAge,
+					address: studentAddress
+				};
+
+				students.push(studentObjects);
+				renderView();
+			});
+
+			renderView();
+
+		});
+
+
+
+
+	</script>
+</body>
+</html>
