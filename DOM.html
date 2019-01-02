@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//tham chiếu các phần tử trong thẻ html
+		document.addEventListener('DOMContentLoaded', function(){
+			var heading = document.getElementById('heading');
+			console.log(heading);
+
+			var className = document.getElementsByClassName('text');
+			console.log(className);
+			//  có 6 node và trong mỗi node có nhiều thuộc tính quan tâm tới 2 thuộc tính innerHTML và InnerText
+
+			var tagName = document.getElementsByTagName('div');
+			console.log('tag name: ', tagName);
+
+			var selectorAll = document.querySelectorAll('#heading');
+			console.log(selectorAll);// trả về mảng aray
+			var selectorAll_1 = document.querySelectorAll('.text');
+			console.log('selector all class ',selectorAll_1);
+
+			
+			var headingHtml = heading.innerHTML;
+			console.log(headingHtml);
+		});
+
+
+	</script>
+
+	<div id="wrapper">
+		<h1 id="heading">DOM Element</h1>
+		<div class="text">get element by class name</div>
+		<div class="text">get element by class name</div>
+		<div class="text">get element by class name</div>
+		<div class="text">get element by class name</div>
+		<div class="text">get element by class name</div>
+		<div class="text">get element by class name</div>
+	</div>
+</body>
+</html>
